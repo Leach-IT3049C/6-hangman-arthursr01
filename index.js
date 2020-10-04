@@ -3,12 +3,46 @@ canvas.width = window.innerWidth
 canvas.height = window.innerHeight
 const ctx = canvas.getContext('2d')
 const c = canvas.getContext('2d')
-
-
+const ctxtx = canvas.getContext('2d')
+const ctxtxtx = canvas.getContext('2d')
+const ctxtxtxtx = canvas.getContext('2d');
+ function DrawTriangle() {
+    ctxtx.beginPath();
+    ctxtx.moveTo(1100 + deltaX, 100  + deltaY);
+    ctxtx.lineTo(870  + deltaX, 150  + deltaY);
+    ctxtx.lineTo(930  + deltaX, 15 + deltaY);
+    ctxtx.stroke();
+ }
+ function DrawStar() {
+    ctx.fillStyle = "blue";
+    ctx.beginPath();
+    ctx.moveTo(108 + deltaX, 0.0 + deltaY);
+    ctx.lineTo(141 + deltaX, 70 + deltaY);
+    ctx.lineTo(218 + deltaX, 78.3 + deltaY);
+    ctx.lineTo(162 + deltaX, 131 + deltaY);
+    ctx.lineTo(175 + deltaX, 205 + deltaY);
+    ctx.lineTo(108 + deltaX, 170 + deltaY);
+    ctx.lineTo(41.2 + deltaX, 205 + deltaY);
+    ctx.lineTo(55 + deltaX, 131 + deltaY);
+    ctx.lineTo(1 + deltaX, 78 + deltaY);
+    ctx.lineTo(75 + deltaX, 68 + deltaY);
+    ctx.lineTo(108 + deltaX, 0 + deltaY);
+    ctx.closePath();
+    ctx.fill();
+ }
+ function DrawRect() {
+    ctxtxtx.beginPath();
+    ctxtxtx.rect(500 + deltaA, 500 + deltaB, 350, 100);
+    ctxtxtx.strokeStyle = "green";
+    ctxtxtx.fillStyle = "yellow";
+    ctxtxtx.fill();
+    ctxtxtx.lineWidth = 1;
+    ctxtxtx.stroke();
+ }
 function DrawSquare() {
     
 ctx.beginPath();
-ctx.rect(200 + deltaA, 200 + deltaB, 150, 100);
+ctx.rect(200 + deltaA, 200 + deltaB, 100, 100);
 ctx.strokeStyle = "blue";
 ctx.fillStyle = "orange";
 ctx.fill();
@@ -48,7 +82,11 @@ function moveCircle(e) {
     }
     e.preventDefault();
     DrawCircle();
+    DrawTriangle();
+    DrawStar();
+  
 }
+
 window.addEventListener("keydown", moveSquare, false);
 function moveSquare(e) {
     switch(e.keyCode) {
@@ -66,5 +104,10 @@ function moveSquare(e) {
             break;
     }
     e.preventDefault();
+
     DrawSquare();
+    DrawRect();
 }
+    
+  
+    
